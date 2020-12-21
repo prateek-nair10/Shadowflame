@@ -162,7 +162,7 @@ clean_passage_back = pygame.image.load("resources\\backgrounds\\clean_passage.pn
 bck_list = [skull_cage_bck,skull_cage_dark_bck,skull_passage_bck,fallen_pillar_bck,ruined_passage_bck,bloody_sewage_bck,ruined_passage_dark_bck,prayer_room_bck,\
             ship_wreck_bck,violet_bck,graveyard_bck,clean_passage_back]
 
-screen = pygame.display.set_mode((WIDTH, HEIGHT))#,pygame.FULLSCREEN,pygame.RESIZABLE)
+screen = pygame.display.set_mode((WIDTH, HEIGHT),pygame.FULLSCREEN,pygame.RESIZABLE)
 
 pygame.display.set_caption("1")
 
