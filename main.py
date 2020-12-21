@@ -581,7 +581,7 @@ def game_loop():
                 pygame.quit()
             # Keydown
             if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_w:
+                if event.key == pygame.K_e:
                     wraith.velocity_y = -8
 
                 elif event.key == pygame.K_s:
@@ -601,7 +601,7 @@ def game_loop():
                     wraith.left = False
                     wraith.velocity_x = 12
 
-                if event.key == pygame.K_SPACE:
+                if event.key == pygame.K_w:
                     if wraith.jump == False:
                         wraith.jump = True
 
