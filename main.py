@@ -227,7 +227,7 @@ medusa_attack_l =[pygame.transform.flip(pygame.image.load("resources\\characters
 
 dragon_r = [pygame.image.load("resources\\characters\\MONSTERS\\dragon\\Walk%s.png"%frame) for frame in range(1,6)]
 dragon_l = [pygame.transform.flip(pygame.image.load("resources\\characters\\MONSTERS\\dragon\\Walk%s.png"%frame),True,False) for frame in range(1,6)]
-dragon_attack_r = [pygame.image.load("\resources\\characters\\MONSTERS\\dragon\\Attack%s.png"%frame) for frame in range(1,5)]
+dragon_attack_r = [pygame.image.load("resources\\characters\\MONSTERS\\dragon\\Attack%s.png"%frame) for frame in range(1,5)]
 dragon_attack_l = [pygame.transform.flip(pygame.image.load("resources\\characters\\MONSTERS\\dragon\\Attack%s.png"%frame),True,False) for frame in range(1,5)]
 
 boss_r = [pygame.image.load("resources\\characters\\Satyr_03\\PNG Sequences\\Walking\\W%s.png"%frame) for frame in range(1,18)]
