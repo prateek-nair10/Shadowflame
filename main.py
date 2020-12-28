@@ -89,9 +89,10 @@ def game_intro():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 quit()
+        screen.blit(pygame.image.load("resources\\backgrounds\\skull_cage.jpg"),(0,0))
                 
         largeText = pygame.font.Font("resources\\fonts\\ZOMBIES_REBORN.ttf",200)
-        TextSurf, TextRect = text_objects("TEST1", largeText, RED)
+        TextSurf, TextRect = text_objects("Naam kya rakhu??", largeText, RED)
         TextRect.center = ((WIDTH/2),(HEIGHT/2))
         screen.blit(TextSurf, TextRect)
 
@@ -162,7 +163,7 @@ clean_passage_back = pygame.image.load("resources\\backgrounds\\clean_passage.pn
 bck_list = [skull_cage_bck,skull_cage_dark_bck,skull_passage_bck,fallen_pillar_bck,ruined_passage_bck,bloody_sewage_bck,ruined_passage_dark_bck,prayer_room_bck,\
             ship_wreck_bck,violet_bck,graveyard_bck,clean_passage_back]
 
-screen = pygame.display.set_mode((WIDTH, HEIGHT))#,pygame.FULLSCREEN,pygame.RESIZABLE)
+screen = pygame.display.set_mode((WIDTH, HEIGHT),pygame.FULLSCREEN,pygame.RESIZABLE)
 
 pygame.display.set_caption("1")
 
@@ -234,87 +235,67 @@ boss_r = [pygame.image.load("resources\\characters\\Satyr_03\\PNG Sequences\\Wal
 boss_l = [pygame.transform.flip(pygame.image.load("resources\\characters\\Satyr_03\\PNG Sequences\\Walking\\W%s.png"%frame), True, False) for frame in range(1,18)]
 boss_attack_r = [pygame.image.load("resources\\characters\\Satyr_03\\PNG Sequences\\Attacking\\%s.png"%frame) for frame in range(1,13)]
 boss_attack_l = [pygame.transform.flip(pygame.image.load("resources\\characters\\Satyr_03\\PNG Sequences\\Attacking\\%s.png"%frame), True, False) for frame in range(1,13)]
+
+def transform(pic_list, x, y):
+    i = 0
+    for picture in pic_list:
+        pic_list[i] = pygame.transform.scale(picture, (x, y))
+        i += 1
+    return pic_list
+
 #idle
-i = 0
-for picture in wraith_idle_r:
-    wraith_idle_r[i] = pygame.transform.scale(picture, (250, 203))
-    i += 1
-
-i = 0
-for picture in wraith_idle_l:
-    wraith_idle_l[i] = pygame.transform.scale(picture, (250, 203))
-    i += 1
-
-i = 0
-for picture in wraith_hurt_r:
-    wraith_hurt_r[i] = pygame.transform.scale(picture, (250, 203))
-    i += 1
-
-i = 0
-for picture in wraith_hurt_l:
-    wraith_hurt_l[i] = pygame.transform.scale(picture, (250, 203))
-    i += 1
+wraith_idle_r = transform(wraith_idle_r, 250, 203)
+wraith_idle_l = transform(wraith_idle_l, 250, 203)
+wraith_hurt_r = transform(wraith_hurt_r, 250, 203)
+wraith_hurt_l = transform(wraith_hurt_l, 250, 203)
 ## wraith2 list
 #walking
-i = 0
-for picture in wraith2_r:
-    wraith2_r[i] = pygame.transform.scale(picture, (250, 203))
-    i += 1
-
-i = 0
-for picture in wraith2_l:
-    wraith2_l[i] = pygame.transform.scale(picture, (250, 203))
-    i += 1
-i = 0
-for picture in wraith2_hurt_r:
-    wraith2_hurt_r[i] = pygame.transform.scale(picture, (250, 203))
-    i += 1
-
-i = 0
-for picture in wraith2_hurt_l:
-    wraith2_hurt_l[i] = pygame.transform.scale(picture, (250, 203))
-    i += 1
+wraith2_r = transform(wraith2_r, 250, 203)
+wraith2_l = transform(wraith2_l, 250, 203)
+wraith2_hurt_r = transform(wraith2_hurt_r, 250, 203)
+wraith2_hurt_l = transform(wraith2_hurt_l, 250, 203)
 #idle
-i = 0
-for picture in wraith2_idle_r:
-    wraith2_idle_r[i] = pygame.transform.scale(picture, (250, 203))
-    i += 1
-
-i = 0
-for picture in wraith2_idle_l:
-    wraith2_idle_l[i] = pygame.transform.scale(picture, (250, 203))
-    i += 1
-
+wraith2_idle_r = transform(wraith2_idle_r, 250, 203)
+wraith2_idle_l = transform(wraith2_idle_l, 250, 203)
 ## wraith3 list
 #walking
-i = 0
-for picture in wraith3_r:
-    wraith3_r[i] = pygame.transform.scale(picture, (250, 203))
-    i += 1
-
-i = 0
-for picture in wraith3_l:
-    wraith3_l[i] = pygame.transform.scale(picture, (250, 203))
-    i += 1
+wraith3_r = transform(wraith3_r, 250, 203)
+wraith3_l = transform(wraith3_l, 250, 203)
 #idle
-i = 0
-for picture in wraith3_idle_r:
-    wraith3_idle_r[i] = pygame.transform.scale(picture, (250, 203))
-    i += 1
+wraith3_idle_r = transform(wraith3_idle_r, 250, 203)
+wraith3_idle_l = transform(wraith3_idle_l, 250, 203)
+wraith3_hurt_r = transform(wraith3_hurt_r, 250, 203)
+wraith3_hurt_l = transform(wraith3_hurt_l, 250, 203)
 
-i = 0
-for picture in wraith3_idle_l:
-    wraith3_idle_l[i] = pygame.transform.scale(picture, (250, 203))
-    i += 1
-i = 0
-for picture in wraith3_hurt_r:
-    wraith3_hurt_r[i] = pygame.transform.scale(picture, (250, 203))
-    i += 1
+lizard_r = transform(lizard_r , 300, 300)
+lizard_l = transform(lizard_l , 300, 300)
+lizard_attack_r = transform(lizard_attack_r , 300, 300)
+lizard_attack_l = transform(lizard_attack_l , 300, 300)
 
-i = 0
-for picture in wraith3_hurt_l:
-    wraith3_hurt_l[i] = pygame.transform.scale(picture, (250, 203))
-    i += 1
+small_dragon_r = transform(small_dragon_r , 200, 200)
+small_dragon_l = transform(small_dragon_l , 200, 200)
+small_dragon_attack_r = transform(small_dragon_attack_r , 200, 200)
+small_dragon_attack_l = transform(small_dragon_attack_l , 200, 200)
+
+jinn_r = transform(jinn_r , 200, 200)
+jinn_l = transform(jinn_l , 200, 200)
+jinn_attack_r = transform(jinn_attack_r , 200, 200)
+jinn_attack_l = transform(jinn_attack_l , 200, 200)
+
+demon_r = transform(demon_r , 300, 300)
+demon_l = transform(demon_l , 300, 300)
+demon_attack_r = transform(demon_attack_r , 300, 300)
+demon_attack_l = transform(demon_attack_l , 300, 300)
+
+medusa_r = transform(medusa_r , 200, 200)
+medusa_l = transform(medusa_l , 200, 200)
+medusa_attack_r = transform(medusa_attack_r , 200, 200)
+medusa_attack_l = transform(medusa_attack_l , 200, 200)
+
+dragon_r = transform(dragon_r , 300, 300)
+dragon_l = transform(dragon_l , 300, 300)
+dragon_attack_r = transform(dragon_attack_r , 300, 300)
+dragon_attack_l = transform(dragon_attack_l , 300, 300)
     
 class Villain(pygame.sprite.Sprite):
     def __init__(self, bck_pos, y_pos, leftimgs, rytimgs, attack_l, attack_r, leftidle = None, rytidle = None, anim_speed = 0.2, attack_range = 100):
@@ -397,23 +378,7 @@ class Villain(pygame.sprite.Sprite):
 
             else:
                 self.walkcount = 0
-        '''
-        elif self.left == True and self.walking == False:
-            if self.idlecount < 11:
-                self.image = self.leftidle[int(self.idlecount)]
-                self.idlecount += self.anim_speed
-
-            else:
-                self.idlecount = 0
-
-        elif self.right == True and self.walking == False:
-            if self.idlecount < 11:
-                self.image = self.rytidle[int(self.idlecount)]
-                self.idlecount += self.anim_speed
-
-            else:
-                self.idlecount = 0
-        '''
+        
         if math.fabs(wraith.rect.x - self.rect.x) < self.attack_range and self.rect.bottom < 1000:
             self.attacking = True
             self.velocity_x = 0
@@ -447,7 +412,7 @@ class Wraith(pygame.sprite.Sprite):
         self.len_r_imgs = len(self.r_imgs)
         self.len_l_imgs = len(self.l_imgs)
         self.jump = False
-        self.jump_power = 8
+        self.jump_power = 10
         self.jumpcount = self.jump_power
         self.right = False
         self.left = False
@@ -538,12 +503,12 @@ all_sprites = pygame.sprite.Group()
 wraith = Wraith(wraith_l, wraith_r, wraith_idle_l, wraith_idle_r, wraith_hurt_l, wraith_hurt_r)
 all_sprites.add(wraith)                                                                                 #bck_pos, leftimgs, rytimgs, leftidle, rytidle
 
-lizard = Villain(1, 690, lizard_l, lizard_r,lizard_attack_l,lizard_attack_r)#, lizard_idle_l, lizard_idle_r)
-small_dragon = Villain(2, 635, small_dragon_l, small_dragon_r,small_dragon_attack_l,small_dragon_attack_r)
-jinn = Villain(4, 585, jinn_l, jinn_r,jinn_attack_l,jinn_attack_r)
-demon = Villain(5, 660, demon_l, demon_r,demon_attack_l,demon_attack_r)
-medusa = Villain(6, 610, medusa_l, medusa_r,medusa_attack_l,medusa_attack_r)
-dragon = Villain(8, 650, dragon_l, dragon_r,dragon_attack_l,dragon_attack_r)
+lizard = Villain(1, 700, lizard_l, lizard_r,lizard_attack_l,lizard_attack_r)#, lizard_idle_l, lizard_idle_r)
+small_dragon = Villain(2, 670, small_dragon_l, small_dragon_r,small_dragon_attack_l,small_dragon_attack_r)
+jinn = Villain(4, 630, jinn_l, jinn_r,jinn_attack_l,jinn_attack_r)
+demon = Villain(5, 680, demon_l, demon_r,demon_attack_l,demon_attack_r)
+medusa = Villain(6, 630, medusa_l, medusa_r,medusa_attack_l,medusa_attack_r)
+dragon = Villain(8, 670, dragon_l, dragon_r,dragon_attack_l,dragon_attack_r)
 boss = Villain(10, 700, boss_l, boss_r,boss_attack_l,boss_attack_r, anim_speed = 0.4)
 all_sprites.add(lizard,small_dragon,jinn,demon,medusa,dragon,boss)
 
@@ -693,8 +658,6 @@ def game_loop():
                 bck_index -= 1
             else:
                 wraith.rect.right = 0
-
-        print("bck_index = ",bck_index)
 
         #index_update_constant += 1
         # Update
