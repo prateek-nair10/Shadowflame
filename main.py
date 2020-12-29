@@ -92,7 +92,7 @@ def game_intro():
         screen.blit(pygame.image.load("resources\\backgrounds\\skull_cage.jpg"),(0,0))
                 
         largeText = pygame.font.Font("resources\\fonts\\ZOMBIES_REBORN.ttf",200)
-        TextSurf, TextRect = text_objects("Naam kya rakhu??", largeText, RED)
+        TextSurf, TextRect = text_objects("Dungeon Flame", largeText, RED)
         TextRect.center = ((WIDTH/2),(HEIGHT/2))
         screen.blit(TextSurf, TextRect)
 
