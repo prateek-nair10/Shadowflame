@@ -92,7 +92,7 @@ def game_intro():
         screen.blit(pygame.image.load("resources\\backgrounds\\skull_cage.jpg"),(0,0))
                 
         largeText = pygame.font.Font("resources\\fonts\\ZOMBIES_REBORN.ttf",200)
-        TextSurf, TextRect = text_objects("Dungeon Flame", largeText, RED)
+        TextSurf, TextRect = text_objects("Shadowflame", largeText, RED)
         TextRect.center = ((WIDTH/2),(HEIGHT/2))
         screen.blit(TextSurf, TextRect)
 
@@ -165,7 +165,7 @@ bck_list = [skull_cage_bck,skull_cage_dark_bck,skull_passage_bck,fallen_pillar_b
 
 screen = pygame.display.set_mode((WIDTH, HEIGHT),pygame.FULLSCREEN,pygame.RESIZABLE)
 
-pygame.display.set_caption("1")
+pygame.display.set_caption("Shadowflame")
 
 
 
