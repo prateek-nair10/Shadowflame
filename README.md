@@ -1,5 +1,5 @@
-# Shadowflame
-https://prateek-nair10.github.io/Shadowflame/
+# Shadowflame is a 2d platformer game
+Browser version: https://prateek-nair10.github.io/Shadowflame/
 
 Use a,s,d,w for movement
 
